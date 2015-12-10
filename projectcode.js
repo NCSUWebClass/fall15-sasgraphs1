@@ -96,8 +96,8 @@ function drawChart() {
     var query3 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1TUfmPIQy1UYkxaBnjQS4SFCo6S2NhLA-_-NASwG85Zs/edit#gid=0&vpid=A1');
     query3.send(handleQueryResponse3);  
 
-    var query4 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1bfVFePTN8OYqfM5t-nRTJtxnG8P_-7RdK713olIxaMU/edit#gid=0');
-    query4.send(handleQueryResponse4);    
+    //var query4 = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1bfVFePTN8OYqfM5t-nRTJtxnG8P_-7RdK713olIxaMU/edit#gid=0');
+    //query4.send(handleQueryResponse4);    
 }
       
 // Handles getting data from one spreadsheet and creating two charts	  
@@ -127,6 +127,8 @@ function handleQueryResponse2(response) {
     chart3.draw(data2, options3);
     chart4 = new google.visualization.ScatterChart(document.getElementById('chart_div4'));
     chart4.draw(data2, options4);
+    chart5 = new google.visualization.BubbleChart(document.getElementById('chart_div5'));
+    chart5.draw(data2, options5); 
     dataArray[0] = data2;  
    
 }
