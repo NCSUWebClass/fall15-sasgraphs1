@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="projectStyles.css">  
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	<link rel="stylesheet" href="/resources/demos/style.css">  
+	<meta charset="UTF-8">
+	<title>SASGraphs1 Project</title>
+</head>
+<body>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6CSardGUPQW1A51jL-16FyN4wJhKshU0&signed_in=true&libraries=places&callback=initAutocomplete" async defer></script>
+	<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+	<script type="text/javascript" src="projectcode.js"></script>
+    
+	<div class="top">SAS Graphs</div>
+	<img class="displayed" src="http://3.bp.blogspot.com/--wZdOiG6uY0/VJJ9KKc-rOI/AAAAAAAAANs/BtRXnePmobs/s1600/sas.square.jpg"  alt="SAS logo">  
+    
+	<br />
+    <br />
+  
+	<table>
+		<tr>     
+			<td>
+				<!-- First set of data from Google Sheets -->
+				<iframe src="https://docs.google.com/spreadsheets/d/1yhoF-bk4Ipm3Ki36ntlXej-Y4rh6afW6ZEdcGaOjRmk/edit?usp=sharing&rm=minimal" width="575" height="400"></iframe>  
+			</td>     
+			<td>
+				<!-- Column Chart -->
+				<div id="chart_div"></div>
+			</td>
+			<td>
+				<!-- Scatter Chart -->
+				<div id="chart_div2"></div>
+			</td>
+		</tr>
+	</table>
+	
+	<br />
+	
+	<!-- For changing the data in the Google spreadsheet -->
+    <input type="submit" value="Submit" onclick='handleClickNow(this);'> 
+
+	<center>
+		<div class="line">
+			<!-- Sort by specific colors -->
+			<input type="checkbox" id="Blue" name="Blue" value="yes" checked="checked" onclick='handleClick(this);'>  <div>Blue  </div>
+			<input type="checkbox" id="Red" name="Red" value="yes" checked="checked" onclick='handleClick(this);'>  <div>Red  </div>
+			<input type="checkbox" id="Orange" name="Orange" value="yes" checked="checked" onclick='handleClick(this);'>  <div>Orange  </div>
+			<input type="checkbox" id="Green" name="Green" value="yes" checked="checked" onclick='handleClick(this);'>  <div>Green  </div>
+		</div>
+	  
+		<br />
+		<br />
+		
+		<!-- Sort by dates -->
+		<div class="date"> Start date: <input type="text" name="startdate" id="datepicker" > </div>
+		<br/>
+		<div class="date"> End date: <input type="text" name="enddate" id="datepicker2" > </div>
+		<br/>   
+		<input type="submit" value="Submit" onclick='handleDate1(this);'>
+	</center>
+	
+	<br />
+  
+	<table>
+		<tr>
+			<td>
+				<!-- Bubble Chart -->
+				 <div id="chart_div5"></div>
+			</td>    
+			<td>
+				<!-- Line Chart -->
+				<div id="chart_div3"></div>
+			</td>
+			<td>
+				<!-- Another Scatter Chart -->
+				<div id="chart_div4"></div>
+			</td>
+		</tr>
+    </table>	
+	
+	<br />
+	    
+
+	<center>
+		<!-- Moves the data left or right or changes the set of data used -->
+		<button type="button" id="left" onclick='handleLeft(this);'>Left</button> 
+		<button type="button" id="right" onclick='handleRight(this);'>Right</button> 
+		<button type="button" id="left" onclick='handleSwitch(this);'>Switch Data</button>          
+	</center>
+   
+	
+</body>
+</html> 
